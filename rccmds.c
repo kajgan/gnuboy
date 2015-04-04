@@ -105,7 +105,7 @@ static int cmd_screenshot(int argc, char **argv)
 	if (argc >= 2)
 		filename = argv[1];
 
-	return vid_screenshot(filename);
+	return ;
 }
 #endif /* GNUBOY_NO_SCREENSHOT */
 
