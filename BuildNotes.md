@@ -1,0 +1,57 @@
+GCC is known to work on a number on platforms.
+
+There is an autotools configure shell script, try that first. For cross compiling you may want to create a static Makefile, see the examples in the source already (Windows and Dingoo).
+
+# Compile/Build options #
+
+There are a few options in the code that can be disabled, e.g. in case libraries are not available or functionality is not wanted (or implemented in a specific port). E.g.:
+
+  * screen shots
+  * .zip file support
+  * sound support, i.e. can build without sound (output) support
+  * joystick support
+
+# Windows #
+
+Known to build/run with gcc (3.4.2) and SDL (1.2).
+
+```
+make -B -f Makfile.win
+```
+
+# Linux #
+
+Tested under x86. Known to work with gcc 4.2.2 and 4.6.3.
+
+```
+sh ./configure --with-sdl
+make -B sdlgnuboy 2>&1 |tee build_sdl.log
+```
+
+
+# Dingoo Native SDL #
+
+gcc 4.1.2
+```
+make -B -f Makefile.dingoo
+```
+
+# Pandora and SDL #
+
+```
+make -f Makefile.pandora
+```
+
+
+# Running #
+
+NOTE SDL will take what ever surface it can find, if you are running dual/multi head displays you may get odd results in fullscreen mode (the default). Suggestion try running in a window.
+
+```
+./sdlgnuboy --fullscreen=0 ROM_NAME  # start in a window
+./sdlgnuboy ROM_NAME  # full screen is the default
+```
+
+
+Surkow wrote:
+> when I started sldgnuboy it appeared fullscreen in the middle of my two screens

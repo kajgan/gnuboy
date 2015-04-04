@@ -1,0 +1,52 @@
+# Introduction #
+
+This is a port for the China Chip A320 [Dingoo](http://en.wikipedia.org/wiki/Dingoo), a MIPS based device. The A320 has a "native" OS µC/OS-II (uCOS II) and users can install Dingux, a Linux port. This port is known to work for the native OS and OpenDingux. [Dingux](http://code.google.com/p/dingoo-linux/) ([also see](http://www.dingux.com/)) should work too. Built using the excellent [Native Dingoo SDK](http://code.google.com/p/dingoo-sdk/) created by Flatmush and Harteex. It uses the [Dingoo SDL port](http://code.google.com/p/dingoo-sdk/wiki/DingooSDL).
+
+For a user port see (and download) http://code.google.com/p/ohboy/
+
+This is not a user friendly port for end users because:
+  1. Must use head revs of Dingoo Native SDK for sound to work correctly and at the correct speed, i.e. need http://code.google.com/p/dingoo-sdk/source/detail?r=271 the binary https://code.google.com/p/dingoo-sdk/downloads/detail?name=dingoo_sdk_r251.zip has an issue with SDL Audio
+  1. in theory it is not as fast as Joyrider's port (missing his memcpy and profiling enhancements), however it manages full speed 60 fps under native with GBC games with sound (may need to clock to 366 or 400Mhz).
+  1. like the Joyrider version `*`.rtc files are not portable and should not be copied to machines with different CPU types.
+  1. no menu
+  1. FPS indicator is controlled via RC variable (not menu)
+  1. screen scaling is untested (small window is known to work)
+  1. background images are untested
+
+It is really targeted at developers at the moment.
+
+This port does not impact the core gnuboy code so the Windows and regular Linux builds still work. I.e. they all share code. Also this version has core code that is slightly ahead of the current (as of Oct 2010) Dingoo ports as the other Dingoo ports are based on 1.0.3, this port uses the latest code and so has better game compatibilty, e.g. "Magical Drop". For more information see http://code.google.com/p/gnuboy/source/diff?spec=svn21&r=21&format=side&path=/trunk/docs/WHATSNEW
+
+If you are not a coder you will not want this version just yet.
+
+# Details #
+
+At the moment the port can be built as a .SIM or as an .APP, and hard coded to run "Adjustris.GB.gz" (available from http://www.pdroms.de/files/910/) in the same directory that the binary is found. NOTE the rom doesn't need to be Adjustris it just needs to have that filename. Also if a rom is passed in as an argument that will be used as the rom name instead.
+
+Key mapping:
+
+| ![http://www.dingoowiki.com/images/d/da/Up.png](http://www.dingoowiki.com/images/d/da/Up.png) | D-pad up        |    UP |
+|:----------------------------------------------------------------------------------------------|:----------------|:------|
+| ![http://www.dingoowiki.com/images/f/f9/Down.png](http://www.dingoowiki.com/images/f/f9/Down.png) | D-pad down      |    DOWN |
+| ![http://www.dingoowiki.com/images/7/7f/Leftright.png](http://www.dingoowiki.com/images/7/7f/Leftright.png) | D-pad left      |    LEFT |
+| ![http://www.dingoowiki.com/images/7/7f/Leftright.png](http://www.dingoowiki.com/images/7/7f/Leftright.png) | D-pad right     |    RIGHT |
+| ![http://www.dingoowiki.com/images/7/70/A.png](http://www.dingoowiki.com/images/7/70/A.png) | A button        |    A button |
+| ![http://www.dingoowiki.com/images/5/57/B.png](http://www.dingoowiki.com/images/5/57/B.png) | B button        |    B button |
+| ![http://www.dingoowiki.com/images/b/b8/Start.png](http://www.dingoowiki.com/images/b/b8/Start.png) | START button    |    START |
+| ![http://www.dingoowiki.com/images/e/e8/Select.png](http://www.dingoowiki.com/images/e/e8/Select.png) | SELECT button   |    SELECT |
+| ![http://www.dingoowiki.com/images/a/a5/X.png](http://www.dingoowiki.com/images/a/a5/X.png) | X button        |    Quit |
+| ![http://www.dingoowiki.com/images/8/8a/Y.png](http://www.dingoowiki.com/images/8/8a/Y.png) | Y button        |    Quit |
+| ![http://www.dingoowiki.com/images/f/fe/L.png](http://www.dingoowiki.com/images/f/fe/L.png) | Left shoulder   |    Quit |
+| ![http://www.dingoowiki.com/images/f/f7/R.png](http://www.dingoowiki.com/images/f/f7/R.png) | Right shoulder  |    Quit |
+| ? | POWER UP button |    Not Mapped |
+
+Images in table from http://dingoowiki.com/index.php?title=Editing:Guidelines#Controls_section
+
+Keys can be remapped by creating a gnuboy.rc, see http://code.google.com/p/gnuboy/source/browse/trunk/docs/CONFIG for details on how config files work. Example:
+```
+set sdl_showfps 2
+set samplerate 8000
+bind up quit
+```
+
+NOTE if X is mapped, pressing and holding X for 3 seconds will also quit gnuboy.

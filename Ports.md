@@ -1,0 +1,48 @@
+Also see OtherEmulators
+
+  * Android GBCoid http://sourceforge.net/projects/gbcoid/
+  * Bitbox https://github.com/makapuf/bitboy - probably the smallest port, this device has only 192Kb of RAM!
+  * Dreamcast http://sourceforge.net/projects/gnuboydc/
+  * Dreamcast http://pqrs.org/dreamcast/software/dcgnuboy/
+  * Dreamcast http://www.dcemu.co.uk/vbulletin/showthread.php?t=103584
+  * Dreamcast http://dcemulation.org/phpBB/viewtopic.php?f=45&t=91022
+  * Dingoo Native (µC/OS-II) - this project DingooPort using [Dingoo SDL](http://code.google.com/p/dingoo-sdk/wiki/DingooSDL) from the [Native Dingoo SDK](http://code.google.com/p/dingoo-sdk/)
+  * Dingoo, Joyrider,
+    * Native (µC/OS-II)
+      * http://dl.openhandhelds.org/cgi-bin/dingoo.cgi?0,0,0,0,71,216 (Harteex memory leak version)
+      * http://dl.openhandhelds.org/cgi-bin/dingoo.cgi?0,0,0,0,71,159
+    * Dingux
+      * http://dl.openhandhelds.org/cgi-bin/dingoo.cgi?0,0,0,0,71,171
+      * http://dl.openhandhelds.org/cgi-bin/dingoo.cgi?0,0,0,0,71,82
+      * http://dl.openhandhelds.org/cgi-bin/dingoo.cgi?0,0,0,0,71,70
+  * Dingoo/Dingux, SiENcE - GnuBoy4D source location?
+    * http://crankgaming.blogspot.com/2010/06/gnuboy4d-for-dingux-v10-released.html
+    * http://boards.dingoonity.org/dingux-releases/gnuboy4d-%28for-dingux%29-v1-0/msg20230/
+    * http://sience.schattenkind.net/dingoo/SiENcE_downloads.htm
+  * Dingoo unknown
+    * http://dl.openhandhelds.org/cgi-bin/dingoo.cgi?0,0,0,0,46,144
+    * http://dl.openhandhelds.org/cgi-bin/dingoo.cgi?0,0,0,0,46,72
+  * Windows CE/Pocket PC/Windows Mobile/GAPI, WAC, http://gnuboyce.berlios.de/
+  * Windows CE/Pocket PC/Windows Mobile/GAPI, Xetra, http://xetranet.free.fr/ipaq/gnuboy/
+  * Zaurus/Qtopia, http://www.slac.com/~mpilone/projects/qtopiagnuboy.phtml
+  * Zaurus/Qtopia, http://www.warmi.net/zaurus/gnuboy.shtml
+  * Gamecube/Wii/libogc, http://code.google.com/p/gnuboy-gx/
+  * Openmoko, http://wiki.openmoko.org/wiki/Gnuboy
+  * NDS, http://www.pocketheaven.com/ph/wiki/GNUboy_DS
+  * Pandora, http://www.gp32x.com/board/index.php?/topic/56916-gnuboy-updated/
+  * GP2x, http://wiki.gp2x.org/wiki/GnuBoy2x
+  * GP2x, Lemonboy
+    * http://www.gp32x.com/board/index.php?/topic/50663-lemonboy2x-updated/ (links to src), note has (prelim?) Super Game Boy (SGB) support.
+    * http://www.gp32spain.com/foros/showthread.php?t=68518
+  * GP2x/Caanoo, OhBoy
+    * http://www.gp32x.com/board/index.php?/topic/56595-ohboy-caanoo-port/
+    * http://www.gp32x.com/board/index.php?/topic/51067-ohboy-a-gameboy-color-emulator
+    * http://dl.openhandhelds.org/cgi-bin/wiz.cgi?0,0,0,0,71,274
+    * by http://www.gp32x.com/board/index.php?/user/18389-ubyte/
+  * Wiz, Lemonboy (with menu) http://dl.openhandhelds.org/cgi-bin/wiz.cgi?0,0,0,0,46,133
+  * [DBox2](http://en.wikipedia.org/wiki/DBox2) http://sourceforge.net/p/tuxbox-cvs/apps/ci/master/tree/tuxbox/funstuff/gnuboy/
+  * Kindle, K3
+    * http://www.mobileread.com/forums/showthread.php?t=173141
+    * https://github.com/twobob/fbgnuboy
+  * Symbian, https://github.com/Summeli/gnuboy
+  * Nintendo64 http://code.google.com/p/gnuboy64/

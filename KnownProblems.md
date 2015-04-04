@@ -1,0 +1,41 @@
+# Known problems #
+
+  * Glitch in intro/cut scene for GBC games The Legend of Zelda - Oracle of Seasons and also The Legend of Zelda - Oracle of Ages. Bars at top and the bottom of the screen should be black (top bar is correctly shown). [Gambatte](http://sourceforge.net/projects/gambatte/) does not have this problem
+
+# To Do #
+
+  * Add console for SDL ala http://sources.cosam.org/svn/goomba/
+  * Add a menu (avoid command line), see Lemon Boy, Oh Boy, various console ports, etc.
+  * Add a menu, either a new menu system, or something based on Oh Boy or [Goomba SDL menu](http://sources.cosam.org/svn/goomba/)
+  * Add frame skip (frameskip) option for slow machines. See Pocket PC versions, OhBoy, Joyrider Dingoo port.
+  * Fix compile warnings - mostly done as of late nov 2010
+  * Add save screen shot support - done
+  * Add volume support - see Oh Boy
+  * Add dynamic sound on/off control (currently sound is set at start up time)
+  * Add skins support, aka background images (for non-scaled view with a border), See Lemonboy
+  * Add built in colorscale mapping for GB games (rather than defaulting). MESS supports this, basically the cart is checksum'd and then used to lookup good a looking color palette
+  * See http://en.wikipedia.org/wiki/List_of_video_game_console_palettes#Game_Boy_Color for discussion on GBC built in color palettes along with http://en.wikipedia.org/wiki/Game_Boy_Color#Color_palettes_used_for_original_Game_Boy_games
+  * Other archive support 7z, etc.  file support? gzip support is already present (albeit a VERY slow implementation). See [fex](http://code.google.com/p/file-extractor/), also see fex and http://byuu.org/bsnes/, bsnes has support for other compression formats via micro-bunzip, a small, simple bzip2 decompression implementation and libjma. Finally also review see http://zziplib.sourceforge.net/zzip-file.html
+  * Find enhancements implemented in other ports and integrate into this release
+  * [ColourIt](http://brunni.dev-fr.org/index.php?page=pcsoft_heigboy) support
+  * Check [Gambatte test cases](http://gambatte.svn.sourceforge.net/viewvc/gambatte/hwtests/), there are many hardware tests cartridges implemented in that project
+  * Improve scalars, this may be tricky with regard to licensing.  See note in [README](http://code.google.com/p/gnuboy/source/browse/trunk/README) regarding Eagle/2xSaI. Note http://scale2x.sourceforge.net/download.html would be suitable as it is also GPL. Or implement some of the ideas from http://www.compuphase.com/graphic/scale.htm - See Oh Boy
+  * Check performance of memcpy, some ports of gnuboy implement a custom memcpy with the reason that it gained frames per seconds.
+  * Add screen shots to save slots (related to "add menu")
+  * Add support for physical cartridges, via http://www.retrode.org/ USB device
+  * Currently sound is handled via a callback into the "porting" (or IO) layer, consider adding a build option for sound callback into gnuboy. This matches a few API approaches (like SDL). Ayla has been looking at a prototype for this:
+
+```
+The principe is to remove the part that produces sound on the main 
+emulator loop, and to put it on the SDL callback; then, it removes 
+the need for an intermediate buffer, and SDL always get the number 
+of samples it asked so there are no cracks.
+
+Plus, if you set the number of samples when initing SDL sound to 736 
+(~= 44100/60Hz), you will have exactly 60 callbacks per second, so using
+a simple semaphore you can synchronize on sound. The major interest is 
+that it's much more precise than waits (the dingoo wait time is MINIMUM 
+one millisecond) so it results in smoother emulation. The drawback is 
+that it is not supported by OSS. But it works on openAL, ALSA, and on 
+native firmware.
+```
